@@ -13,16 +13,16 @@ def fetch_data(ticker, provider, start, end):
         df = web.DataReader(ticker, provider, start, end)
         df.to_csv('./data/{ticker}.csv'.format(ticker=ticker), sep=';', index=True, header=True)
         print('Fetching {ticker} data complete.'.format(ticker=ticker))
-        time.sleep(3)
+        time.sleep(4)
 
     except Exception as e:
-        print('main loop', e)
+        print('main loop:', e)
 
 
 def main():
     tickers = ['AAPL', 'MSFT']
     provider = 'yahoo'
-    start = '2017-01-01'
+    start = '2014-01-01'
     end = '2017-12-01'
 
     for ticker in tickers:
