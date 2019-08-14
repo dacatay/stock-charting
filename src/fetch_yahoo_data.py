@@ -2,11 +2,11 @@ import time
 import pandas as pd
 import pandas_datareader.data as web
 import datetime
-from dateutil.relativedelta import relativedelta
 
 
+
+# PANDAS_DATAREADER WITH YAHOO
 def fetch_yahoo_data(ticker, provider, start, end):
-
     try:
         if provider == 'yahoo':
             print('Fetching {ticker} data...'.format(ticker=ticker))
@@ -21,14 +21,14 @@ def fetch_yahoo_data(ticker, provider, start, end):
 
 
 def main():
-    tickers = ['MSF.DE', 'AMZ.DE', 'CMC.DE', 'PFE.DE', 'CIS.DE', 'HDI.DE', 'MDO.DE', 'AEC1.DE', 'WDP.DE', 'JNJ.DE', '3V64.DE']
+    tickers = ['MSF.DE', 'AMZ.DE', 'CMC.DE', 'PFE.DE', 'CIS.DE', 'HDI.DE', 'MDO.DE', 'AEC1.DE', 'WDP.DE', 'JNJ.DE',
+               '3V64.DE']
     provider = 'yahoo'
-    start = datetime.datetime(2000, 1, 1)
+    start = datetime.datetime(2015, 1, 1)
     end = datetime.datetime.today()
 
     for ticker in tickers:
         fetch_yahoo_data(ticker, provider, start, end)
 
 
-if __name__ == '__main__':
-    main()
+main()
